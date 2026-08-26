@@ -23,7 +23,6 @@ function Hero() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/[0.035] blur-[150px]" />
 
       <div className="mx-auto w-full max-w-7xl">
-
         {/* Top Label */}
         <div className="animate-fade-in mb-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -41,7 +40,6 @@ function Hero() {
 
         {/* Main Content */}
         <div className="grid items-center gap-20 lg:grid-cols-[1fr_340px]">
-
           {/* Left Content */}
           <div>
             <p className="animate-fade-up mb-5 text-sm text-white/30">
@@ -60,7 +58,6 @@ function Hero() {
 
             {/* Description + Buttons */}
             <div className="mt-10 flex max-w-2xl flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-
               <p className="animate-fade-up delay-200 max-w-lg text-base leading-8 text-white/45 sm:text-lg">
                 I create modern, responsive web experiences with a focus
                 on clean interfaces, thoughtful interactions and simple
@@ -68,7 +65,6 @@ function Hero() {
               </p>
 
               <div className="animate-fade-up delay-300 flex shrink-0 gap-3">
-
                 {/* Explore Button */}
                 <Link
                   to="/about"
@@ -89,13 +85,19 @@ function Hero() {
                 >
                   View CV
                 </Link>
-
               </div>
             </div>
           </div>
 
           {/* Right Visual */}
           <div className="animate-fade-in delay-300 relative mx-auto hidden aspect-square w-full max-w-[320px] lg:block">
+            
+            {/* Profile Image */}
+            <img
+              src="/images/gemini.jpg"
+              alt="Jahanzaib Ali"
+              className="absolute left-1/2 top-1/2 z-20 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-orange-500 object-cover shadow-[0_0_40px_rgba(249,115,22,0.35)]"
+            />
 
             {/* Outer Rotating Ring */}
             <div className="animate-spin-slow absolute inset-0 rounded-full border border-orange-500/20" />
@@ -104,11 +106,7 @@ function Hero() {
             <div className="absolute inset-8 rounded-full border border-dashed border-white/10" />
 
             {/* Inner Floating Circle */}
-            <div className="animate-float absolute inset-16 flex items-center justify-center rounded-full bg-orange-500/[0.035]">
-              <span className="text-7xl font-semibold tracking-[-0.08em] text-orange-500/[0.12]">
-                JA
-              </span>
-            </div>
+            <div className="animate-float absolute inset-16 flex items-center justify-center rounded-full bg-orange-500/[0.035]" />
 
             {/* Orange Orbit Dot */}
             <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_25px_rgba(249,115,22,0.6)]" />
@@ -126,7 +124,6 @@ function Hero() {
 
         {/* Bottom Information */}
         <div className="animate-fade-up delay-400 mt-20 flex items-center justify-between border-t border-white/10 pt-6">
-
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-white/25">
               Wazirabad, Punjab, Pakistan
@@ -144,7 +141,6 @@ function Hero() {
               className="transition-transform duration-300 group-hover:translate-y-1"
             />
           </a>
-
         </div>
       </div>
     </section>
