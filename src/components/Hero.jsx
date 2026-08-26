@@ -23,6 +23,7 @@ function Hero() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/[0.035] blur-[150px]" />
 
       <div className="mx-auto w-full max-w-7xl">
+
         {/* Top Label */}
         <div className="animate-fade-in mb-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -40,13 +41,13 @@ function Hero() {
 
         {/* Main Content */}
         <div className="grid items-center gap-20 lg:grid-cols-[1fr_340px]">
+
           {/* Left Content */}
           <div>
             <p className="animate-fade-up mb-5 text-sm text-white/30">
               Hello, I'm
             </p>
 
-            {/* Name */}
             <h1 className="animate-fade-up delay-100 text-[clamp(4rem,10vw,9rem)] font-semibold leading-[0.82] tracking-[-0.07em]">
               Jahanzaib
               <br />
@@ -58,6 +59,7 @@ function Hero() {
 
             {/* Description + Buttons */}
             <div className="mt-10 flex max-w-2xl flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+
               <p className="animate-fade-up delay-200 max-w-lg text-base leading-8 text-white/45 sm:text-lg">
                 I create modern, responsive web experiences with a focus
                 on clean interfaces, thoughtful interactions and simple
@@ -65,7 +67,7 @@ function Hero() {
               </p>
 
               <div className="animate-fade-up delay-300 flex shrink-0 gap-3">
-                {/* Explore Button */}
+
                 <Link
                   to="/about"
                   className="group flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-black transition duration-300 hover:scale-[1.03] hover:bg-orange-400"
@@ -78,60 +80,75 @@ function Hero() {
                   />
                 </Link>
 
-                {/* CV Button */}
                 <Link
                   to="/cv"
                   className="rounded-full border border-white/15 px-6 py-3 text-sm text-white/70 transition duration-300 hover:border-orange-500/50 hover:text-orange-400"
                 >
                   View CV
                 </Link>
+
               </div>
             </div>
           </div>
 
-          {/* Right Visual */}
-          <div className="animate-fade-in delay-300 relative mx-auto hidden aspect-square w-full max-w-[320px] lg:block">
-            
-            {/* Profile Image */}
-            <img
-              src="/images/gemini.jpg"
-              alt="Jahanzaib Ali"
-              className="absolute left-1/2 top-1/2 z-20 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-orange-500 object-cover shadow-[0_0_40px_rgba(249,115,22,0.35)]"
-            />
+          {/* Right Content */}
+          <div className="hidden lg:block">
+            <div className="border-l border-white/10 pl-10">
 
-            {/* Outer Rotating Ring */}
-            <div className="animate-spin-slow absolute inset-0 rounded-full border border-orange-500/20" />
+              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-orange-500">
+                About My Work
+              </p>
 
-            {/* Dashed Ring */}
-            <div className="absolute inset-8 rounded-full border border-dashed border-white/10" />
+              <p className="text-sm leading-8 text-white/40">
+                I build modern web applications and practical digital
+                solutions focused on clean design, responsive experiences,
+                and real-world functionality.
+              </p>
 
-            {/* Inner Floating Circle */}
-            <div className="animate-float absolute inset-16 flex items-center justify-center rounded-full bg-orange-500/[0.035]" />
+              <div className="mt-10 space-y-5">
 
-            {/* Orange Orbit Dot */}
-            <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_25px_rgba(249,115,22,0.6)]" />
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-xs uppercase tracking-[0.2em] text-white/25">
+                    01
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-white/60">
+                    Web Development
+                  </span>
+                </div>
 
-            {/* Small Orange Dot */}
-            <span className="absolute bottom-8 right-3 h-1.5 w-1.5 rounded-full bg-orange-500/50" />
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-xs uppercase tracking-[0.2em] text-white/25">
+                    02
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-white/60">
+                    React & Tailwind
+                  </span>
+                </div>
 
-            {/* Small White Dot */}
-            <span className="absolute left-2 top-1/3 h-1.5 w-1.5 rounded-full bg-white/30" />
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-xs uppercase tracking-[0.2em] text-white/25">
+                    03
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.15em] text-white/60">
+                    AI & Applications
+                  </span>
+                </div>
 
-            {/* Center Diagonal Line */}
-            <div className="absolute left-1/2 top-1/2 h-px w-[130%] -translate-x-1/2 rotate-45 bg-orange-500/[0.08]" />
+              </div>
+            </div>
           </div>
+
         </div>
 
         {/* Bottom Information */}
         <div className="animate-fade-up delay-400 mt-20 flex items-center justify-between border-t border-white/10 pt-6">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-white/25">
-              Wazirabad, Punjab, Pakistan
-            </p>
-          </div>
+
+          <p className="text-xs uppercase tracking-[0.25em] text-white/25">
+            Wazirabad, Punjab, Pakistan
+          </p>
 
           <a
-            href="#home"
+            href="#projects"
             className="group flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-white/30 transition hover:text-orange-500"
           >
             Scroll
@@ -141,7 +158,9 @@ function Hero() {
               className="transition-transform duration-300 group-hover:translate-y-1"
             />
           </a>
+
         </div>
+
       </div>
     </section>
   );

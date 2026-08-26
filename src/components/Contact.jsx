@@ -10,19 +10,18 @@ import { Link } from "react-router-dom";
 function Contact() {
   return (
     <section className="relative min-h-screen overflow-hidden px-6 pb-24 pt-40">
-      {/* Orange Glow */}
       <div className="pointer-events-none absolute -right-40 top-1/4 -z-10 h-96 w-96 rounded-full bg-orange-500/[0.04] blur-[130px]" />
 
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-        <div className="animate-fade-in flex items-end justify-between border-b border-white/10 pb-8">
+        <div className="flex items-end justify-between border-b border-white/10 pb-8">
           <div>
             <p className="mb-4 text-xs uppercase tracking-[0.3em] text-orange-500">
               04 / 04
             </p>
 
-            <h1 className="animate-fade-up text-5xl font-semibold tracking-[-0.05em] sm:text-7xl">
+            <h1 className="text-5xl font-semibold tracking-[-0.05em] sm:text-7xl">
               Contact
             </h1>
           </div>
@@ -37,7 +36,7 @@ function Contact() {
         {/* Main */}
         <div className="grid gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr]">
 
-          {/* CTA */}
+          {/* Left */}
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-orange-500">
               Get in touch
@@ -52,8 +51,8 @@ function Contact() {
             </h2>
 
             <p className="mt-8 max-w-lg text-sm leading-7 text-white/40">
-              Interested in web development, software or WordPress?
-              Feel free to reach out.
+              Interested in web development, software, dashboards or
+              AI-powered applications? Feel free to reach out.
             </p>
           </div>
 
@@ -85,9 +84,11 @@ function Contact() {
               />
             </a>
 
-            {/* Phone */}
+            {/* WhatsApp */}
             <a
-              href="tel:+923289096100"
+              href="https://wa.me/923289096100"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-between border-b border-white/10 py-6 transition hover:bg-orange-500/[0.025]"
             >
               <div className="flex items-center gap-4">
@@ -95,7 +96,7 @@ function Contact() {
 
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-white/25">
-                    Phone
+                    WhatsApp
                   </p>
 
                   <p className="mt-2 text-sm text-white/60">
@@ -154,20 +155,24 @@ function Contact() {
 
         {/* Connect */}
         <div className="border-t border-white/10 pt-10">
+
           <div className="mb-7 flex items-center justify-between">
             <p className="text-xs uppercase tracking-[0.3em] text-orange-500">
               Connect
             </p>
 
             <span className="text-xs text-white/20">
-              Online
+              Available
             </span>
           </div>
 
           <div className="grid border-l border-t border-white/10 sm:grid-cols-2">
 
+            {/* GitHub */}
             <a
-              href="#"
+              href="https://github.com/g1f23ubscs119"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-between border-b border-r border-white/10 p-5 transition hover:bg-orange-500/[0.04]"
             >
               <div>
@@ -186,17 +191,20 @@ function Contact() {
               />
             </a>
 
+            {/* WhatsApp */}
             <a
-              href="#"
+              href="https://wa.me/923289096100"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-between border-b border-r border-white/10 p-5 transition hover:bg-orange-500/[0.04]"
             >
               <div>
                 <p className="text-base text-white/60 transition group-hover:text-orange-400">
-                  LinkedIn
+                  WhatsApp
                 </p>
 
                 <p className="mt-1 text-xs text-white/25">
-                  Professional profile
+                  Let's talk about your project
                 </p>
               </div>
 
@@ -205,6 +213,7 @@ function Contact() {
                 className="text-white/20 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-500"
               />
             </a>
+
           </div>
         </div>
 
@@ -218,6 +227,7 @@ function Contact() {
             © {new Date().getFullYear()} All rights reserved.
           </p>
         </div>
+
       </div>
     </section>
   );
