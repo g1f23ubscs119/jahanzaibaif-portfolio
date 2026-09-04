@@ -11,14 +11,25 @@ const projects = [
     image: "/images/WhatsApp Image 2026-08-25 at 3.35.15 PM.jpeg",
     type: "WEB + MOBILE",
   },
+
   {
     id: "ai-web-app",
-    title: "AI Web Application",
-    category: "AI Web Project",
+    title: "SalesPro Website",
+    category: "Sales Website",
     description:
-      "A modern AI-powered web application with a clean, responsive interface designed to provide users with a simple and interactive AI experience.",
+      "A modern and responsive sales website designed with a clean interface to showcase products, services and business solutions.",
     image: "/images/gemini.jpg",
     type: "WEB APPLICATION",
+  },
+
+  {
+    id: "ali-whatsapp-agent",
+    title: "Ali WhatsApp Agent",
+    category: "AI WhatsApp Automation",
+    description:
+      "An AI-powered WhatsApp automation agent that connects through QR code, allows users to control the AI agent, customize its talking behavior, and automatically reply to incoming WhatsApp messages.",
+    image: "/images/AI_WhatsApp_Agent_thumbnail_202609021142.jpeg",
+    type: "AI AGENT",
   },
 ];
 
@@ -47,7 +58,7 @@ function Projects() {
 
           <p className="mt-6 max-w-2xl text-sm leading-7 text-white/40 md:text-base">
             Real-world applications designed and developed to solve
-            practical problems through modern web and mobile technologies.
+            practical problems through modern web, mobile and AI technologies.
           </p>
         </div>
 
