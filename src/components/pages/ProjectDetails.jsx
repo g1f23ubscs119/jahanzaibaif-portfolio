@@ -405,7 +405,7 @@ function ProjectDetails() {
           <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
             <img
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} - ${project.category} project screenshot`}
               className="h-auto w-full object-cover"
             />
           </div>

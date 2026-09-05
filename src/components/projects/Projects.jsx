@@ -75,7 +75,7 @@ function Projects() {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.category}`}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
 
