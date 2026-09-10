@@ -21,7 +21,8 @@ function Hero() {
             w-full
             object-cover
             object-center
-            scale-[1.03]
+            scale-[0.92]
+            sm:scale-[1.03]
             animate-[heroZoom_20s_ease-in-out_infinite_alternate]
           "
         />
@@ -29,7 +30,7 @@ function Hero() {
         {/* BRIGHTER OVERLAY */}
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* LEFT GRADIENT - TEXT READABILITY */}
+        {/* LEFT GRADIENT */}
         <div
           className="
             absolute
@@ -41,7 +42,7 @@ function Hero() {
           "
         />
 
-        {/* BOTTOM CINEMATIC FADE */}
+        {/* BOTTOM FADE */}
         <div
           className="
             absolute
@@ -481,7 +482,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* ================= SCROLL ================= */}
+      {/* ================= SCROLL INDICATOR ================= */}
       <div
         className="
           absolute
@@ -532,11 +533,23 @@ function Hero() {
       <style>{`
         @keyframes heroZoom {
           0% {
-            transform: scale(1.03);
+            transform: scale(0.92);
           }
 
           100% {
-            transform: scale(1.09);
+            transform: scale(0.97);
+          }
+        }
+
+        @media (min-width: 640px) {
+          @keyframes heroZoom {
+            0% {
+              transform: scale(1.03);
+            }
+
+            100% {
+              transform: scale(1.09);
+            }
           }
         }
 
