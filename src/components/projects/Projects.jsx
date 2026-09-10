@@ -24,7 +24,7 @@ const projects = [
 
   {
     id: "ali-whatsapp-agent",
-    title: "Ali WhatsApp Agent",
+    title: "AI WhatsApp Agent",
     category: "AI WhatsApp Automation",
     description:
       "An AI-powered WhatsApp automation agent that connects through QR code, allows users to control the AI agent, customize its talking behavior, and automatically reply to incoming WhatsApp messages.",

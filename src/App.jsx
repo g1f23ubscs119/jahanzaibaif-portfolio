@@ -1,28 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.jsx";
 
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import CV from "./components/CV";
+import Hero from "./components/Hero.jsx";
+import About from "./components/About.jsx";
+import Experience from "./components/Experience.jsx";
+import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer.jsx";
+import CV from "./components/CV.jsx";
 
-import Projects from "./components/projects/Projects";
-import ProjectDetails from "./components/pages/ProjectDetails";
+import Projects from "./components/projects/Projects.jsx";
+import ProjectDetails from "./components/pages/ProjectDetails.jsx";
 
 function Home() {
   return (
     <>
       <Helmet>
-        <title>Jahanzaib Aif | Full Stack Web Developer Portfolio</title>
+        <title>Jahanzaib Ali | Full Stack Web Developer Portfolio</title>
         <meta
           name="description"
-          content="Jahanzaib Aif - Computer Science student and web developer specializing in React, Tailwind CSS, and Python. View my projects and skills."
+          content="Jahanzaib Ali - Computer Science student and web developer specializing in React, Tailwind CSS, Python, and WordPress."
         />
       </Helmet>
+
       <Hero />
       <Projects />
     </>
@@ -33,12 +34,13 @@ function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Jahanzaib Aif | Computer Science Student & Web Developer</title>
+        <title>About Jahanzaib Ali | Web Developer</title>
         <meta
           name="description"
-          content="Learn more about Jahanzaib Aif, a Computer Science student and web developer from Wazirabad, Pakistan, skilled in React, JavaScript, Python and WordPress."
+          content="Learn more about Jahanzaib Ali, a Computer Science student and web developer."
         />
       </Helmet>
+
       <About />
     </>
   );
@@ -48,13 +50,30 @@ function ExperiencePage() {
   return (
     <>
       <Helmet>
-        <title>Experience | Jahanzaib Aif</title>
+        <title>Experience | Jahanzaib Ali</title>
         <meta
           name="description"
-          content="Explore the work experience and projects of Jahanzaib Aif, a web developer specializing in React and Tailwind CSS."
+          content="Explore the experience and projects of Jahanzaib Ali, a web developer specializing in React and Tailwind CSS."
         />
       </Helmet>
+
       <Experience />
+    </>
+  );
+}
+
+function ProjectsPage() {
+  return (
+    <>
+      <Helmet>
+        <title>Projects | Jahanzaib Ali</title>
+        <meta
+          name="description"
+          content="Explore web development projects created by Jahanzaib Ali."
+        />
+      </Helmet>
+
+      <Projects />
     </>
   );
 }
@@ -63,12 +82,13 @@ function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact Jahanzaib Aif | Web Developer</title>
+        <title>Contact Jahanzaib Ali | Web Developer</title>
         <meta
           name="description"
-          content="Get in touch with Jahanzaib Aif for web development projects, collaborations, or freelance work."
+          content="Get in touch with Jahanzaib Ali for web development projects and collaborations."
         />
       </Helmet>
+
       <Contact />
     </>
   );
@@ -80,22 +100,18 @@ function App() {
       <Navbar />
 
       <Routes>
-        {/* Home Page */}
         <Route path="/" element={<Home />} />
 
-        {/* About Page */}
         <Route path="/about" element={<AboutPage />} />
 
-        {/* Experience Page */}
         <Route path="/experience" element={<ExperiencePage />} />
 
-        {/* Contact Page */}
+        <Route path="/projects" element={<ProjectsPage />} />
+
         <Route path="/contact" element={<ContactPage />} />
 
-        {/* CV Page */}
         <Route path="/cv" element={<CV />} />
 
-        {/* Project Details Page */}
         <Route
           path="/projects/:projectId"
           element={<ProjectDetails />}

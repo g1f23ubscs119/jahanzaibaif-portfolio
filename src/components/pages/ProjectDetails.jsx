@@ -143,11 +143,11 @@ const projects = {
   },
 
   "ali-whatsapp-agent": {
-    title: "Ali WhatsApp Agent",
+    title: "AI WhatsApp Agent",
     category: "AI WhatsApp Automation Agent",
 
     description:
-      "Ali WhatsApp Agent is an AI-powered WhatsApp automation system designed to automatically respond to incoming WhatsApp messages. The system connects a WhatsApp number through a QR-code based setup and provides a dedicated dashboard where users can control the AI agent and customize its response behavior. Once the agent is enabled, it can automatically handle incoming conversations and respond to messages without requiring manual replies.",
+      "AI WhatsApp Agent is an AI-powered WhatsApp automation system designed to automatically respond to incoming WhatsApp messages. The system connects a WhatsApp number through a QR-code based setup and provides a dedicated dashboard where users can control the AI agent and customize its response behavior. Once the agent is enabled, it can automatically handle incoming conversations and respond to messages without requiring manual replies.",
 
     image:
       "/images/AI_WhatsApp_Agent_thumbnail_202609021142.jpeg",
@@ -155,13 +155,14 @@ const projects = {
     loginUrl: "",
     contactUrl: "",
     mobileAppFile: "",
+    liveUrl: "https://ali-agent.serveousercontent.com",
 
-    mobileTitle: "Ali WhatsApp",
+    mobileTitle: "AI WhatsApp",
     mobileHeading: "Agent.",
     mobileLabel: "WhatsApp AI Agent",
 
     mobileDescription:
-      "Ali WhatsApp Agent is designed with a responsive interface so users can manage their WhatsApp AI agent from different devices. Users can connect their WhatsApp account, control the agent status, and manage its response behavior through a simple dashboard.",
+      "AI WhatsApp Agent is designed with a responsive interface so users can manage their WhatsApp AI agent from different devices. Users can connect their WhatsApp account, control the agent status, and manage its response behavior through a simple dashboard.",
 
     mobileFeatures: [
       "Connect WhatsApp using a QR-code based setup",
@@ -174,12 +175,12 @@ const projects = {
       "Monitor and control the automation system easily",
     ],
 
-    webTitle: "Ali WhatsApp",
+    webTitle: "AI WhatsApp",
     webHeading: "AI Dashboard.",
     webLabel: "AI Web Dashboard",
 
     webDescription:
-      "The Ali WhatsApp Agent web dashboard provides a centralized interface for managing an AI-powered WhatsApp automation agent. Users can connect their WhatsApp account by scanning a QR code through WhatsApp Linked Devices. After connecting, the dashboard allows users to enable or disable the AI agent and configure how it communicates. When the agent is active, it automatically replies to incoming messages sent to the connected WhatsApp number.",
+      "The AI WhatsApp Agent web dashboard provides a centralized interface for managing an AI-powered WhatsApp automation agent. Users can connect their WhatsApp account by scanning a QR code through WhatsApp Linked Devices. After connecting, the dashboard allows users to enable or disable the AI agent and configure how it communicates. When the agent is active, it automatically replies to incoming messages sent to the connected WhatsApp number.",
 
     webFeatures: [
       "QR-code based WhatsApp connection",
@@ -195,9 +196,9 @@ const projects = {
     ],
 
     liveTitle: "Explore",
-    liveHeading: "Ali WhatsApp Agent.",
+    liveHeading: "AI WhatsApp Agent.",
     liveDescription:
-      "Ali WhatsApp Agent is an AI-powered automation system designed to connect with WhatsApp and automatically handle incoming messages through a customizable AI agent.",
+      "AI WhatsApp Agent is an AI-powered automation system designed to connect with WhatsApp and automatically handle incoming messages through a customizable AI agent.",
 
     technologies: [
       "React",
@@ -276,7 +277,7 @@ function WhatsAppAgentGallery() {
             <img
               key={image}
               src={image}
-              alt={`Ali WhatsApp Agent screenshot ${index + 1}`}
+              alt={`AI WhatsApp Agent screenshot ${index + 1}`}
               className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ease-in-out ${
                 index === current
                   ? "scale-100 opacity-100"
@@ -572,7 +573,7 @@ function ProjectDetails() {
               </h2>
 
               <p className="mt-7 max-w-3xl text-sm leading-8 text-white/45 md:text-base">
-                Ali WhatsApp Agent uses a simple workflow to connect a
+                AI WhatsApp Agent uses a simple workflow to connect a
                 WhatsApp account with an AI-powered automation system.
                 Once connected and activated, the AI agent can automatically
                 respond to incoming WhatsApp messages.
@@ -601,7 +602,7 @@ function ProjectDetails() {
 
                 <p className="text-sm leading-7 text-white/40">
                   Open WhatsApp Linked Devices and scan the QR code displayed
-                  on the Ali WhatsApp Agent welcome page.
+                  on the AI WhatsApp Agent welcome page.
                 </p>
               </div>
 
@@ -624,7 +625,7 @@ function ProjectDetails() {
 
                 <p className="text-sm leading-7 text-white/40">
                   After scanning the QR code, the WhatsApp account connects
-                  with the Ali WhatsApp Agent dashboard.
+                  with the AI WhatsApp Agent dashboard.
                 </p>
               </div>
 
@@ -743,6 +744,52 @@ function ProjectDetails() {
                 <Mail size={17} />
                 Contact
                 <ArrowUpRight size={17} />
+              </a>
+
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================= LIVE PROJECT (ALI WHATSAPP AGENT) ================= */}
+      {projectId === "ali-whatsapp-agent" && (
+        <section className="border-t border-white/10 px-6 py-28">
+          <div className="mx-auto max-w-7xl">
+
+            <div className="mb-10">
+
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-px w-10 bg-orange-500" />
+
+                <span className="text-xs uppercase tracking-[0.3em] text-orange-500">
+                  Live Project
+                </span>
+              </div>
+
+              <h2 className="text-4xl font-semibold md:text-5xl">
+                {project.liveTitle}
+                <span className="text-orange-500">
+                  {" "}
+                  {project.liveHeading}
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/40">
+                {project.liveDescription}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-orange-400"
+              >
+                <Globe size={17} />
+                Open Live Demo
+                <ExternalLink size={15} />
               </a>
 
             </div>
