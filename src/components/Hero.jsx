@@ -13,7 +13,7 @@ function Hero() {
         {/* FULL SCREEN PROFILE PHOTO */}
         <img
           src={profilePic}
-          alt="Jahanzaib Ali"
+          alt="Jahanzaib Asif"
           className="
             absolute
             inset-0
@@ -232,7 +232,6 @@ function Hero() {
       {/* ================= CONTENT ================= */}
       <div className="relative z-10 mx-auto w-full max-w-7xl">
         <div className="max-w-3xl">
-
           {/* STATUS BADGE */}
           <div
             className="
@@ -306,7 +305,7 @@ function Hero() {
                 drop-shadow-[0_0_30px_rgba(249,115,22,0.25)]
               "
             >
-              ALI
+              ASIF
             </span>
           </h1>
 
