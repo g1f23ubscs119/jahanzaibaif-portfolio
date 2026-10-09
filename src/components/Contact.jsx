@@ -1,235 +1,181 @@
-import {
-  ArrowUpRight,
-  Download,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+﻿import { ArrowUpRight, Download, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { IMAGES, SITE } from "../data/site.js";
+import PageBanner from "./PageBanner.jsx";
+import Reveal from "./Reveal.jsx";
 
 function Contact() {
+  const whatsappLink = "https://wa.me/" + SITE.whatsapp;
+
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 pb-24 pt-40">
-      <div className="pointer-events-none absolute -right-40 top-1/4 -z-10 h-96 w-96 rounded-full bg-orange-500/[0.04] blur-[130px]" />
+    <>
+      <PageBanner
+        image={IMAGES.desk}
+        index="04 / 04"
+        title="Contact"
+        line="Let us connect and build something"
+      />
 
-      <div className="mx-auto max-w-7xl">
+      <section className="px-5 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-14 lg:grid-cols-2">
+            <Reveal>
+              <p className="text-xs uppercase tracking-[0.3em] text-mint-400">
+                Get in touch
+              </p>
 
-        {/* Header */}
-        <div className="flex items-end justify-between border-b border-white/10 pb-8">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-orange-500">
-              04 / 04
-            </p>
+              <h2 className="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">
+                Let us build
+                <br />
+                <span className="text-mint-400">something great.</span>
+              </h2>
 
-            <h1 className="text-5xl font-semibold tracking-[-0.05em] sm:text-7xl">
-              Contact
-            </h1>
+              <p className="mt-6 max-w-md text-sm leading-7 text-white/50">
+                Interested in web development, software, dashboards or
+                AI-powered applications? Feel free to reach out.
+              </p>
+
+              <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
+                <img
+                  src={IMAGES.workspace}
+                  alt="Developer workspace"
+                  className="h-64 w-full object-cover"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={150}>
+              <div className="space-y-4">
+                <a
+                  href={"mailto:" + SITE.email}
+                  className="group flex items-center justify-between rounded-2xl border border-white/10 bg-ink-900 p-5 transition hover:border-mint-400/40"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-400/10 text-mint-400">
+                      <Mail size={18} />
+                    </span>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/35">
+                        Email
+                      </p>
+                      <p className="mt-1 text-sm text-white/70">{SITE.email}</p>
+                    </div>
+                  </div>
+                  <ArrowUpRight
+                    size={17}
+                    className="text-white/25 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-mint-400"
+                  />
+                </a>
+
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between rounded-2xl border border-white/10 bg-ink-900 p-5 transition hover:border-mint-400/40"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-400/10 text-mint-400">
+                      <Phone size={18} />
+                    </span>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/35">
+                        WhatsApp
+                      </p>
+                      <p className="mt-1 text-sm text-white/70">{SITE.phone}</p>
+                    </div>
+                  </div>
+                  <ArrowUpRight
+                    size={17}
+                    className="text-white/25 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-mint-400"
+                  />
+                </a>
+
+                <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-ink-900 p-5">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-400/10 text-mint-400">
+                    <MapPin size={18} />
+                  </span>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/35">
+                      Location
+                    </p>
+                    <p className="mt-1 text-sm text-white/70">
+                      Wazirabad, Punjab, Pakistan
+                    </p>
+                  </div>
+                </div>
+
+                <Link
+                  to="/cv"
+                  className="group flex items-center justify-between rounded-2xl border border-mint-400/30 bg-mint-400/[0.06] p-5 transition hover:border-mint-400/60"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-400 text-ink-950">
+                      <Download size={18} />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-white">View CV</p>
+                      <p className="mt-1 text-xs text-white/40">
+                        Education, skills and experience
+                      </p>
+                    </div>
+                  </div>
+                  <ArrowUpRight
+                    size={17}
+                    className="text-white/30 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-mint-400"
+                  />
+                </Link>
+              </div>
+            </Reveal>
           </div>
 
-          <p className="hidden text-right text-xs uppercase leading-6 tracking-[0.2em] text-white/25 md:block">
-            Let's connect
-            <br />
-            & build something
-          </p>
-        </div>
-
-        {/* Main */}
-        <div className="grid gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr]">
-
-          {/* Left */}
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-500">
-              Get in touch
-            </p>
-
-            <h2 className="mt-6 max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] sm:text-7xl">
-              Let's build
-              <br />
-              <span className="text-orange-500">
-                something great.
-              </span>
-            </h2>
-
-            <p className="mt-8 max-w-lg text-sm leading-7 text-white/40">
-              Interested in web development, software, dashboards or
-              AI-powered applications? Feel free to reach out.
-            </p>
-          </div>
-
-          {/* Contact Details */}
-          <div className="border-t border-white/10">
-
-            {/* Email */}
-            <a
-              href="mailto:jahanzaibasif55@gmail.com"
-              className="group flex items-center justify-between border-b border-white/10 py-6 transition hover:bg-orange-500/[0.025]"
-            >
-              <div className="flex items-center gap-4">
-                <Mail size={17} className="text-orange-500" />
-
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-white/25">
-                    Email
-                  </p>
-
-                  <p className="mt-2 text-sm text-white/60">
-                    jahanzaibasif55@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <ArrowUpRight
-                size={17}
-                className="text-white/20 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-500"
-              />
-            </a>
-
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/923289096100"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between border-b border-white/10 py-6 transition hover:bg-orange-500/[0.025]"
-            >
-              <div className="flex items-center gap-4">
-                <Phone size={17} className="text-orange-500" />
-
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-white/25">
-                    WhatsApp
-                  </p>
-
-                  <p className="mt-2 text-sm text-white/60">
-                    +92 328 9096100
-                  </p>
-                </div>
-              </div>
-
-              <ArrowUpRight
-                size={17}
-                className="text-white/20 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-500"
-              />
-            </a>
-
-            {/* Location */}
-            <div className="flex items-center gap-4 border-b border-white/10 py-6">
-              <MapPin size={17} className="text-orange-500" />
-
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-white/25">
-                  Location
-                </p>
-
-                <p className="mt-2 text-sm text-white/60">
-                  Wazirabad, Punjab, Pakistan
-                </p>
-              </div>
-            </div>
-
-            {/* CV */}
-            <Link
-              to="/cv"
-              className="group mt-6 flex items-center justify-between rounded-2xl border border-orange-500/20 p-5 transition hover:border-orange-500/40 hover:bg-orange-500/[0.04]"
-            >
-              <div className="flex items-center gap-4">
-                <Download size={17} className="text-orange-500" />
-
-                <div>
-                  <p className="text-sm text-white/70">
-                    View CV
-                  </p>
-
-                  <p className="mt-1 text-xs text-white/25">
-                    Education, skills & experience
-                  </p>
-                </div>
-              </div>
-
-              <ArrowUpRight
-                size={17}
-                className="text-white/20 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-500"
-              />
-            </Link>
-          </div>
-        </div>
-
-        {/* Connect */}
-        <div className="border-t border-white/10 pt-10">
-
-          <div className="mb-7 flex items-center justify-between">
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-500">
+          <div className="mt-24">
+            <p className="text-xs uppercase tracking-[0.3em] text-mint-400">
               Connect
             </p>
 
-            <span className="text-xs text-white/20">
-              Available
-            </span>
-          </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <a
+                href={SITE.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-white/10 bg-ink-900 p-6 transition hover:border-mint-400/40"
+              >
+                <div>
+                  <p className="font-display text-lg font-semibold transition group-hover:text-mint-300">
+                    GitHub
+                  </p>
+                  <p className="mt-1 text-xs text-white/35">Code and projects</p>
+                </div>
+                <ArrowUpRight
+                  size={18}
+                  className="text-white/25 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-mint-400"
+                />
+              </a>
 
-          <div className="grid border-l border-t border-white/10 sm:grid-cols-2">
-
-            {/* GitHub */}
-            <a
-              href="https://github.com/g1f23ubscs119"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between border-b border-r border-white/10 p-5 transition hover:bg-orange-500/[0.04]"
-            >
-              <div>
-                <p className="text-base text-white/60 transition group-hover:text-orange-400">
-                  GitHub
-                </p>
-
-                <p className="mt-1 text-xs text-white/25">
-                  Code & projects
-                </p>
-              </div>
-
-              <ArrowUpRight
-                size={17}
-                className="text-white/20 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-500"
-              />
-            </a>
-
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/923289096100"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between border-b border-r border-white/10 p-5 transition hover:bg-orange-500/[0.04]"
-            >
-              <div>
-                <p className="text-base text-white/60 transition group-hover:text-orange-400">
-                  WhatsApp
-                </p>
-
-                <p className="mt-1 text-xs text-white/25">
-                  Let's talk about your project
-                </p>
-              </div>
-
-              <ArrowUpRight
-                size={17}
-                className="text-white/20 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-500"
-              />
-            </a>
-
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-white/10 bg-ink-900 p-6 transition hover:border-mint-400/40"
+              >
+                <div>
+                  <p className="font-display text-lg font-semibold transition group-hover:text-mint-300">
+                    WhatsApp
+                  </p>
+                  <p className="mt-1 text-xs text-white/35">
+                    Let us talk about your project
+                  </p>
+                </div>
+                <ArrowUpRight
+                  size={18}
+                  className="text-white/25 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-mint-400"
+                />
+              </a>
+            </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs uppercase tracking-[0.2em] text-orange-500/60">
-            Jahanzaib Ali — Web Developer
-          </p>
-
-          <p className="text-xs text-white/20">
-            © {new Date().getFullYear()} All rights reserved.
-          </p>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

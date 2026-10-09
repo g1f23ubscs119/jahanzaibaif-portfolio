@@ -1,208 +1,173 @@
-import { ArrowUpRight, Code2, GraduationCap } from "lucide-react";
+﻿import { ArrowUpRight, Code2, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { IMAGES, PICS } from "../data/site.js";
+import PageBanner from "./PageBanner.jsx";
+import Reveal from "./Reveal.jsx";
+
+const experiences = [
+  {
+    period: "2024 - Present",
+    title: "Web Developer",
+    type: "Web",
+    image: PICS.expWeb,
+    description:
+      "Responsive websites and modern interfaces using HTML, CSS, JavaScript, React.js and WordPress.",
+  },
+  {
+    period: "2023 - Present",
+    title: "Python & C++ Developer",
+    type: "Software",
+    image: PICS.expSoftware,
+    description:
+      "Software applications and automation projects using Python, C++ and Object-Oriented Programming.",
+  },
+  {
+    period: "2024 - Present",
+    title: "WordPress Developer",
+    type: "WordPress",
+    image: PICS.expWordpress,
+    description:
+      "WordPress development, theme and plugin customization, optimization and responsive design.",
+  },
+];
+
+const education = [
+  {
+    period: "2023 - 2027",
+    title: "Bachelor of Science in Computer Science",
+    place: "University of Central Punjab (UCP), Gujranwala",
+    tag: "BSCS",
+  },
+  {
+    period: "2021 - 2023",
+    title: "ICS (Physics)",
+    place: "Punjab College, Wazirabad",
+    tag: "ICS",
+  },
+];
 
 function Experience() {
-  const experiences = [
-    {
-      period: "2024 — Present",
-      title: "Web Developer",
-      type: "Web",
-      description:
-        "Responsive websites and modern interfaces using HTML, CSS, JavaScript, React.js and WordPress.",
-    },
-    {
-      period: "2023 — Present",
-      title: "Python & C++ Developer",
-      type: "Software",
-      description:
-        "Software applications and automation projects using Python, C++ and Object-Oriented Programming.",
-    },
-    {
-      period: "2024 — Present",
-      title: "WordPress Developer",
-      type: "WordPress",
-      description:
-        "WordPress development, theme and plugin customization, optimization and responsive design.",
-    },
-  ];
-
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 pb-24 pt-40">
-      {/* Orange Glow */}
-      <div className="pointer-events-none absolute -left-40 top-1/3 -z-10 h-96 w-96 rounded-full bg-orange-500/[0.035] blur-[130px]" />
+    <>
+      <PageBanner
+        image={IMAGES.office}
+        index="03 / 04"
+        title="Experience"
+        line="Development and Education"
+      />
 
-      <div className="mx-auto max-w-7xl">
-
-        {/* Header */}
-        <div className="animate-fade-in flex items-end justify-between border-b border-white/10 pb-8">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-orange-500">
-              03 / 04
+      <section className="px-5 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex items-center gap-3">
+            <Code2 size={16} className="text-mint-400" />
+            <p className="text-xs uppercase tracking-[0.3em] text-mint-400">
+              Professional Experience
             </p>
-
-            <h1 className="animate-fade-up text-5xl font-semibold tracking-[-0.05em] sm:text-7xl">
-              Experience
-            </h1>
           </div>
 
-          <p className="hidden text-right text-xs uppercase leading-6 tracking-[0.2em] text-white/25 md:block">
-            Development
-            <br />
-            & Education
-          </p>
-        </div>
+          <div className="relative mt-10 border-l border-white/10 pl-8 sm:pl-10">
+            {experiences.map((item, index) => (
+              <Reveal key={item.title} delay={index * 100}>
+                <div className="relative mb-6">
+                  <span className="absolute -left-[38px] top-9 z-10 h-3 w-3 rounded-full bg-mint-400 ring-4 ring-ink-950 sm:-left-[46px]" />
 
-        {/* Experience */}
-        <div className="mt-16">
-          <div className="mb-7 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Code2 size={15} className="text-orange-500" />
+                  <article className="group grid overflow-hidden rounded-2xl border border-white/10 bg-ink-900 transition duration-300 hover:border-mint-400/40 sm:grid-cols-[240px_1fr]">
+                    <div className="relative h-44 overflow-hidden sm:h-full">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 to-transparent sm:bg-gradient-to-r sm:from-transparent sm:to-ink-900/60" />
+                    </div>
 
-              <p className="text-xs uppercase tracking-[0.3em] text-orange-500">
-                Professional Experience
-              </p>
-            </div>
+                    <div className="p-6 sm:p-7">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <p className="text-xs uppercase tracking-widest text-mint-300">
+                          {item.period}
+                        </p>
 
-            <span className="text-xs text-white/20">
-              03 roles
-            </span>
-          </div>
+                        <span className="rounded-full border border-mint-400/30 px-4 py-1.5 text-xs text-mint-300">
+                          {item.type}
+                        </span>
+                      </div>
 
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            {experiences.map((experience, index) => (
-              <article
-                key={experience.title}
-                className="group grid gap-7 px-0 py-8 transition duration-300 hover:bg-orange-500/[0.025] lg:grid-cols-[180px_1fr_160px] lg:px-5"
-              >
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-orange-500/70">
-                    {experience.period}
-                  </p>
+                      <h2 className="mt-4 font-display text-xl font-semibold sm:text-2xl">
+                        {item.title}
+                      </h2>
+
+                      <p className="mt-3 max-w-2xl text-sm leading-6 text-white/50">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
                 </div>
-
-                <div>
-                  <div className="mb-2 flex items-center gap-3">
-                    <span className="text-[10px] text-orange-500/50">
-                      0{index + 1}
-                    </span>
-
-                    <span className="h-px w-5 bg-orange-500/20" />
-                  </div>
-
-                  <h2 className="text-xl font-medium tracking-tight sm:text-2xl">
-                    {experience.title}
-                  </h2>
-
-                  <p className="mt-3 max-w-2xl text-sm leading-6 text-white/40">
-                    {experience.description}
-                  </p>
-                </div>
-
-                <div className="flex items-start lg:justify-end">
-                  <span className="rounded-full border border-orange-500/20 px-4 py-2 text-xs text-orange-500/70">
-                    {experience.type}
-                  </span>
-                </div>
-              </article>
+              </Reveal>
             ))}
           </div>
-        </div>
 
-        {/* Education */}
-        <div className="mt-20">
-          <div className="mb-7 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <GraduationCap size={16} className="text-orange-500" />
+          <div className="mt-24 flex items-center gap-3">
+            <GraduationCap size={17} className="text-mint-400" />
+            <p className="text-xs uppercase tracking-[0.3em] text-mint-400">
+              Education
+            </p>
+          </div>
 
-              <p className="text-xs uppercase tracking-[0.3em] text-orange-500">
-                Education
-              </p>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <div className="space-y-4">
+              {education.map((item, index) => (
+                <Reveal key={item.title} delay={index * 100}>
+                  <article className="rounded-2xl border border-white/10 bg-ink-900 p-6 transition duration-300 hover:border-mint-400/40 sm:p-7">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-xs uppercase tracking-widest text-mint-300">
+                        {item.period}
+                      </p>
+
+                      <span className="rounded-full border border-mint-400/30 px-4 py-1.5 text-xs text-mint-300">
+                        {item.tag}
+                      </span>
+                    </div>
+
+                    <h2 className="mt-4 font-display text-xl font-semibold">
+                      {item.title}
+                    </h2>
+
+                    <p className="mt-2 text-sm text-white/50">{item.place}</p>
+                  </article>
+                </Reveal>
+              ))}
             </div>
 
-            <span className="text-xs text-white/20">
-              02
-            </span>
+            <Reveal delay={150}>
+              <div className="h-full min-h-[280px] overflow-hidden rounded-3xl border border-white/10">
+                <img
+                  src={IMAGES.students}
+                  alt="Students studying"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Reveal>
           </div>
 
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            <article className="grid gap-7 px-0 py-8 transition duration-300 hover:bg-orange-500/[0.025] lg:grid-cols-[180px_1fr_160px] lg:px-5">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-orange-500/70">
-                  2023 — 2027
-                </p>
-              </div>
+          <div className="mt-20 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/30">
+              More projects coming soon.
+            </p>
 
-              <div>
-                <span className="text-[10px] text-orange-500/50">
-                  01
-                </span>
-
-                <h2 className="mt-2 text-xl font-medium tracking-tight sm:text-2xl">
-                  Bachelor of Science in Computer Science
-                </h2>
-
-                <p className="mt-2 text-sm text-white/40">
-                  University of Central Punjab (UCP), Gujranwala
-                </p>
-              </div>
-
-              <div className="flex items-start lg:justify-end">
-                <span className="rounded-full border border-orange-500/20 px-4 py-2 text-xs text-orange-500/70">
-                  BSCS
-                </span>
-              </div>
-            </article>
-
-            <article className="grid gap-7 px-0 py-8 transition duration-300 hover:bg-orange-500/[0.025] lg:grid-cols-[180px_1fr_160px] lg:px-5">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-orange-500/70">
-                  2021 — 2023
-                </p>
-              </div>
-
-              <div>
-                <span className="text-[10px] text-orange-500/50">
-                  02
-                </span>
-
-                <h2 className="mt-2 text-xl font-medium tracking-tight sm:text-2xl">
-                  ICS (Physics)
-                </h2>
-
-                <p className="mt-2 text-sm text-white/40">
-                  Punjab College, Wazirabad
-                </p>
-              </div>
-
-              <div className="flex items-start lg:justify-end">
-                <span className="rounded-full border border-orange-500/20 px-4 py-2 text-xs text-orange-500/70">
-                  ICS
-                </span>
-              </div>
-            </article>
+            <Link
+              to="/contact"
+              className="group flex w-fit items-center gap-3 rounded-full bg-mint-400 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-mint-300"
+            >
+              Contact me
+              <ArrowUpRight
+                size={16}
+                className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+              />
+            </Link>
           </div>
         </div>
-
-        {/* CTA */}
-        <div className="mt-16 flex items-center justify-between border-t border-white/10 pt-7">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/25">
-            More projects coming soon.
-          </p>
-
-          <Link
-            to="/contact"
-            className="group flex items-center gap-3 rounded-full bg-orange-500 px-6 py-3 text-sm font-medium text-black transition hover:scale-[1.03] hover:bg-orange-400"
-          >
-            Contact me
-
-            <ArrowUpRight
-              size={16}
-              className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-            />
-          </Link>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

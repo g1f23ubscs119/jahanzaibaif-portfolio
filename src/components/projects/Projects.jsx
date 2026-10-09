@@ -1,110 +1,145 @@
+﻿import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { projectsList } from "../../data/projectsList.js";
 
-const projects = [
-  {
-    id: "salespro-dashboard",
-    title: "SalesPro",
-    category: "Web Dashboard + Mobile App",
-    description:
-      "Complete sales management system for products, customers, orders and revenue.",
-    image: "/images/WhatsApp Image 2026-08-25 at 3.35.15 PM.jpeg",
-    type: "WEB + MOBILE",
-  },
-  {
-    id: "ai-web-app",
-    title: "SalesPro Website",
-    category: "Sales Website",
-    description:
-      "Modern responsive sales website built to showcase products and business solutions.",
-    image: "/images/gemini.jpg",
-    type: "WEB",
-  },
-  {
-    id: "ali-whatsapp-agent",
-    title: "AI WhatsApp Agent",
-    category: "AI WhatsApp Automation",
-    description:
-      "AI-powered WhatsApp automation agent with automatic message responses.",
-    image: "/images/AI_WhatsApp_Agent_thumbnail_202609021142.jpeg",
-    type: "AI AGENT",
-  },
+const tabs = [
+  { key: "all", label: "All", match: "" },
+  { key: "web", label: "Web", match: "WEB" },
+  { key: "mobile", label: "Mobile", match: "MOBILE" },
+  { key: "ai", label: "AI", match: "AI" },
 ];
 
+function matches(project, tab) {
+  if (tab.key === "all") return true;
+  return project.type.includes(tab.match);
+}
+
 function Projects() {
+  const [activeKey, setActiveKey] = useState("all");
+
+  const activeTab = tabs.find((tab) => tab.key === activeKey);
+  const visible = projectsList.filter((project) => matches(project, activeTab));
+
   return (
-    <section className="bg-[#050505] px-5 py-24 text-white">
+    <section className="px-5 py-24">
       <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-xl">
+            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-mint-400">
+              My Work
+            </p>
 
-        <div className="mb-12 text-center">
-          <p className="mb-4 text-xs uppercase tracking-[0.3em] text-orange-500">
-            My Work
-          </p>
+            <h2 className="font-display text-4xl font-bold sm:text-5xl">
+              Selected <span className="text-mint-400">Projects.</span>
+            </h2>
 
-          <h2 className="text-4xl font-bold sm:text-5xl">
-            My <span className="text-orange-500">Projects.</span>
-          </h2>
+            <p className="mt-4 text-sm leading-7 text-white/50">
+              A collection of projects I have designed and developed using
+              modern web, mobile and AI technologies.
+            </p>
+          </div>
 
-          <p className="mx-auto mt-4 max-w-xl text-sm text-white/40">
-            A collection of projects I have designed and developed using
-            modern web, mobile and AI technologies.
-          </p>
+          <div className="-mx-1 overflow-x-auto px-1 pb-1">
+            <div className="inline-flex gap-1 rounded-full border border-white/10 bg-ink-900 p-1.5">
+              {tabs.map((tab) => {
+                const count = projectsList.filter((project) =>
+                  matches(project, tab)
+                ).length;
+                const active = tab.key === activeKey;
+
+                return (
+                  <button
+                    type="button"
+                    key={tab.key}
+                    onClick={() => setActiveKey(tab.key)}
+                    className={
+                      "flex items-center gap-2 whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium transition " +
+                      (active
+                        ? "bg-mint-400 text-ink-950"
+                        : "text-white/55 hover:text-white")
+                    }
+                  >
+                    {tab.label}
+                    <span
+                      className={
+                        "rounded-full px-2 py-0.5 text-[10px] " +
+                        (active
+                          ? "bg-ink-950/20 text-ink-950"
+                          : "bg-white/10 text-white/50")
+                      }
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {projects.map((project, index) => (
-            <article
+        <div
+          key={activeKey}
+          className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {visible.map((project, index) => (
+            <Link
               key={project.id}
-              className="overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] transition duration-300 hover:-translate-y-1 hover:border-orange-500/30"
+              to={"/projects/" + project.id}
+              style={{ animationDelay: index * 90 + "ms" }}
+              className="animate-pop group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-900 transition duration-300 hover:-translate-y-1.5 hover:border-mint-400/40"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-transparent" />
 
-                <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/60 px-3 py-1 text-[9px] text-white/70">
-                  0{index + 1}
-                </div>
-
-                <div className="absolute right-4 top-4 rounded-full border border-orange-500/20 bg-black/60 px-3 py-1 text-[9px] uppercase text-orange-400">
+                <span className="absolute right-4 top-4 rounded-full border border-mint-400/30 bg-ink-950/70 px-3 py-1 text-[10px] uppercase tracking-wider text-mint-300 backdrop-blur">
                   {project.type}
-                </div>
+                </span>
+
+                <span className="absolute bottom-4 right-4 flex h-11 w-11 translate-y-3 items-center justify-center rounded-full bg-mint-400 text-ink-950 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <ArrowUpRight size={18} />
+                </span>
               </div>
 
-              <div className="p-5">
-                <p className="mb-2 text-[9px] uppercase tracking-[0.2em] text-orange-500">
+              <div className="flex flex-1 flex-col p-6">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-mint-400">
                   {project.category}
                 </p>
 
-                <h3 className="text-xl font-semibold">
+                <h3 className="mt-3 font-display text-xl font-semibold">
                   {project.title}
-                  <span className="text-orange-500">.</span>
+                  <span className="text-mint-400">.</span>
                 </h3>
 
-                <p className="mt-3 min-h-[48px] text-xs leading-6 text-white/40">
+                <p className="mt-3 flex-1 text-sm leading-6 text-white/50">
                   {project.description}
                 </p>
 
-                <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-white/20">
-                    Project 0{index + 1}
-                  </span>
-
-                  <Link
-                    to={"/projects/" + project.id}
-                    className="flex items-center gap-1 text-xs text-white/60 transition hover:text-orange-500"
-                  >
-                    Explore
-                    <ArrowUpRight size={14} />
-                  </Link>
+                <div className="mt-5 flex flex-wrap gap-2 border-t border-white/10 pt-5">
+                  {project.stack.slice(0, 3).map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 px-3 py-1 text-[11px] text-white/55"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
+        {visible.length === 0 && (
+          <p className="mt-14 text-center text-sm text-white/40">
+            No projects in this category yet.
+          </p>
+        )}
       </div>
     </section>
   );
