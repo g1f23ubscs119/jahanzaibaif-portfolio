@@ -41,7 +41,7 @@ export default function Hero() {
     <>
       <section className="relative flex min-h-screen flex-col overflow-hidden bg-ink-950 px-5 pb-20 pt-0 lg:flex-row lg:items-center lg:pt-32">
         <div
-          className="relative -mx-5 h-[440px] w-[calc(100%+2.5rem)] shrink-0 overflow-hidden transition-transform duration-300 ease-out sm:h-[520px] lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:h-auto lg:w-[66%]"
+          className="relative -mx-5 mt-24 h-[330px] w-[calc(100%+2.5rem)] shrink-0 overflow-hidden transition-transform duration-300 ease-out sm:h-[420px] lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:mt-0 lg:h-auto lg:w-[66%]"
           style={{
             transform:
               "translate(" + offset.x + "px, " + offset.y + "px) scale(1.03)",
@@ -52,8 +52,7 @@ export default function Hero() {
             alt={SITE.name}
             className="animate-kenburns h-full w-full object-cover object-top"
           />
-          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-ink-950 to-transparent lg:hidden" />
-          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink-950/70 to-transparent lg:hidden" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 to-transparent lg:hidden" />
         </div>
 
         <div className="absolute inset-0 hidden bg-gradient-to-r from-ink-950 via-ink-950/80 to-ink-950/10 lg:block" />
@@ -76,7 +75,7 @@ export default function Hero() {
           </div>
         ))}
 
-        <div className="relative z-10 mx-auto -mt-16 w-full max-w-6xl lg:mt-0">
+        <div className="relative z-10 mx-auto -mt-6 w-full max-w-6xl lg:mt-0">
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-mint-400/30 bg-mint-400/10 px-4 py-1.5 text-xs text-mint-300">
               <span className="h-2 w-2 animate-pulse rounded-full bg-mint-400" />
@@ -153,3 +152,4 @@ export default function Hero() {
     </>
   );
 }
+
